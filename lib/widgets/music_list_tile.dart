@@ -19,26 +19,40 @@ class MusicListTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
         vertical: 10,
       ),
-      child: Container(
-        color: Colors.black.withOpacity(0.1),
-        alignment: Alignment.center,
-        child: ListTile(
-          leading: Container(
-            clipBehavior: Clip.antiAlias,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(8),
-              ),
+      child: InkWell(
+        onTap: () {},
+        child: Container(
+          decoration: BoxDecoration(
+            // color: Colors.black.withOpacity(0.1),
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
+            gradient: LinearGradient(
+              colors: [
+                Colors.white.withOpacity(0.01),
+                Colors.black.withOpacity(0.1),
+                Colors.black.withOpacity(0.03),
+                Colors.black.withOpacity(0.1),
+              ],
             ),
-            child: Image(
-                width: 50,
-                height: 50,
-                fit: BoxFit.cover,
-                image: NetworkImage(imageUrl)),
           ),
-          title: Text(title),
-          subtitle: Text(uploadedBy),
-          trailing: const Icon(Icons.more_vert_rounded),
+          alignment: Alignment.center,
+          child: ListTile(
+            leading: Container(
+              clipBehavior: Clip.antiAlias,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(8),
+                ),
+              ),
+              child: Image(
+                  width: 50,
+                  height: 50,
+                  fit: BoxFit.cover,
+                  image: NetworkImage(imageUrl)),
+            ),
+            title: Text(title),
+            subtitle: Text(uploadedBy),
+            trailing: const Icon(Icons.more_vert_rounded),
+          ),
         ),
       ),
     );

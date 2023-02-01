@@ -36,6 +36,9 @@ class CardTitle extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
+                const SizedBox(
+                  height: 4,
+                ),
                 Text(
                   duration,
                   style: const TextStyle(
